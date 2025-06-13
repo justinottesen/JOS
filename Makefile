@@ -11,11 +11,11 @@ all: $(BUILD_DIR)/boot_floppy.img
 run: $(BUILD_DIR)/boot_floppy.img
 	$(QEMU) -fda $<
 
-$(BUILD_DIR)/boot_floppy.img: $(BUILD_DIR)/boot.bin
+$(BUILD_DIR)/boot_floppy.img: $(BUILD_DIR)/stage1.bin
 	truncate -s 1440k $@
 	dd if=$< of=$@ conv=notrunc
 
-$(BUILD_DIR)/boot.bin: $(SRC_DIR)/boot.asm $(BUILD_DIR)
+$(BUILD_DIR)/stage1.bin: $(SRC_DIR)/stage1.asm $(BUILD_DIR)
 	$(ASM) $< -f bin -o $@
 
 $(BUILD_DIR):

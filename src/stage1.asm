@@ -32,7 +32,7 @@ start:
 
 .jump:
     ; For now, just print a hello world message
-    mov si, msg_hello_world
+    mov si, msg_enter_stage1
     call puts
 
     cli                     ; Disable hardware interrupts
@@ -67,7 +67,9 @@ puts:
     pop si
     ret
 
-msg_hello_world: db 'Hello, World!', 0x0D, 0x0A, 0
+%define ENDL 0x0d, 0x0a
+
+msg_enter_stage1: db 'Entering stage 1...', ENDL, 0
 
 ;
 ; The BIOS looks for 0x55 and 0xAA at bytes 510 and 511 to indicate this is a bootloader. We fill

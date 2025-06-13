@@ -56,6 +56,16 @@ if I run into problems, I can fall back to using GRUB.
 I will go with a Two-Stage Bootloader, I highly doubt I will be able to fit everything in 512 bytes
 to fit in the boot sector. Currently, all I have is a Hello World program.
 
+## Second Stage
+
+Resources:
+- [MBR (x86)](https://wiki.osdev.org/MBR_(x86))
+
+Now I need to convert the Hello World bootloader into something that sets up the second stage. I
+initially thought I would need to set up a full Master Boot Record (MBR), but it seems that since
+I am targeting a floppy disk for now, I don't need to worry about that. I just need to put the
+second stage somewhere in another sector.
+
 ## Common Resources
 
 - [OSDev](https://wiki.osdev.org)
