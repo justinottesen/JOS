@@ -60,6 +60,7 @@ to fit in the boot sector. Currently, all I have is a Hello World program.
 
 Resources:
 - [MBR (x86)](https://wiki.osdev.org/MBR_(x86))
+- [Memory Map (x86)](https://wiki.osdev.org/Memory_Map_(x86))
 
 Now I need to convert the Hello World bootloader into something that sets up the second stage. I
 initially thought I would need to set up a full Master Boot Record (MBR), but it seems that since
